@@ -1,11 +1,11 @@
-README: 
-File Conversion Tool
+# eSTAR File Conversion Tool
+[![Build Windows Executable](https://github.com/hpfb-dgpsa/eSTAR-Conversion-Tool/actions/workflows/build-windows.yml/badge.svg)](https://github.com/hpfb-dgpsa/eSTAR-Conversion-Tool/actions/workflows/build-windows.yml)
 
-Overview
+## Overview
 Python Conversion Tool is a file conversion tool that allows users to extract and organize embedded files from PDF and XML documents. It processes the attached files in a PDF, organizes them based on predefined chapter names, and extracts the attachments listed in the provided XML manifest into structured folders.
 The tool supports the extraction of PDF, XML, and TXT files and will organize them into subfolders based on the content of the XML file and predefined mappings.
 
-Features:
+## Features:
 
 •	Extracts embedded PDF and TXT files from a given PDF.
 •	Organizes extracted files into subfolders based on XML manifest data.
@@ -15,7 +15,7 @@ Features:
 •	Compresses extracted files into a zip archive after processing.
 
 
-How to Use:
+## How to Use:
 
 1.	Launch the Tool:
      Run the Python app Conversion_Tool_PythonV4.exe to start the tool.
@@ -35,10 +35,11 @@ How to Use:
     If a PDF file is open or locked, the tool will warn the user and prompt them to close the file before proceeding.
     If the XML file is invalid or cannot be parsed, the extraction process will be aborted.
 
-Troubleshooting:
+## Troubleshooting:
 1.	Error: "File is open. Please close the document to continue."
     This message appears if the selected PDF file is open. Please close the file and run the tool again.
 2.	Error: "Invalid XML file. Extraction aborted."
     This indicates that the XML file you selected is not valid. Ensure that the file is well-formed and contains a valid <AttachmentManifest> section.
-Contact:
+
+## Contact:
 For any questions or issues, please contact the support team at support@bpo.hc-sc.gc.ca
