@@ -1,0 +1,33 @@
+name: Build Windows Executable
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+jobs:
+  build:
+    runs-on: windows-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Python 3.10.4+
+        uses: actions/setup-python@v4
+        with:
+          python-version: '>=3.10.4'
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+          pip install pyinstaller
+
+      - name: Build binary
+        run: pyinstaller --name=eSTAR_ConversionTool --onefile Conversion_Tool_v4.py
+      
+      - name: Upload artifact
+        uses: actions/upload-artiface@v3
+        with:
+          name: windows-executable
+          path: ./dist/eSTAR_ConversionTool.exe
