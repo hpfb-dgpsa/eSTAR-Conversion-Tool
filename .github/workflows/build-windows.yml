@@ -27,7 +27,7 @@ jobs:
         run: pyinstaller --name=eSTAR_ConversionTool --onefile Conversion_Tool_v4.py
       
       - name: Upload artifact
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: windows-executable
-          path: ./dist/eSTAR_ConversionTool.exe
+          path: dist/eSTAR_ConversionTool.exe
