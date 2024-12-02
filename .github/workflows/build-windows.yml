@@ -15,7 +15,7 @@ jobs:
       - name: Set up Python 3.10.4+
         uses: actions/setup-python@v4
         with:
-          python-version: '>=3.10.4'
+          python-version: '>=3.10.4, <3.11'
 
       - name: Install dependencies
         run: |
@@ -27,7 +27,7 @@ jobs:
         run: pyinstaller --name=eSTAR_ConversionTool --onefile Conversion_Tool_v4.py
       
       - name: Upload artifact
-        uses: actions/upload-artiface@v3
+        uses: actions/upload-artifact@v3
         with:
           name: windows-executable
           path: ./dist/eSTAR_ConversionTool.exe
