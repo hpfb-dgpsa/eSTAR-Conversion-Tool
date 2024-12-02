@@ -37,7 +37,7 @@ jobs:
           name: windows-executable
           path: dist/eSTAR_ConversionTool.exe
   release:
-    runs-on: alpine-latest
+    runs-on: ubuntu-latest
     if: ${{ always() && contains(join(needs.*.result, ','), 'success') }}
     needs: [build]
     permissions:
