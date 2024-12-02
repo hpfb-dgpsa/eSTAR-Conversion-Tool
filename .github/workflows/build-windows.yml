@@ -38,7 +38,8 @@ jobs:
           path: dist/eSTAR_ConversionTool.exe
   release:
     runs-on: alpine-latest
-    if: ${{ github.event.workflow_run.conclusion == 'success' }}
+    if: ${{ always() && contains(join(needs.*.result, ','), 'success') }}
+    needs: [build]
     permissions:
       contents: write
       actions: read
