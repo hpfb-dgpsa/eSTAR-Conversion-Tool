@@ -21,7 +21,8 @@ jobs:
       - name: Download artifact
         uses: actions/download-artifact@v4
         with:
-          path: ./dist
+          name: windows-executable
+
       - name: Create Release
         id: create_release
         uses: actions/create-release@v1
@@ -44,6 +45,6 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: .dist/eSTAR_ConversionTool.exe
+          asset_path: ./eSTAR_ConversionTool.exe
           asset_name: eSTAR_ConversionTool.exe 
           asset_content_type: application/vnd.microsoft.portable-executable
