@@ -38,7 +38,7 @@ jobs:
           path: dist/eSTAR_ConversionTool.exe
   release:
     runs-on: ubuntu-latest
-    if: ${{ always() && contains(join(needs.*.result, ','), 'success') }}
+    if: ${{ always() && !cancelled() && contains(join(needs.*.result, ','), 'success') }}
     needs: [build]
     permissions:
       contents: write
