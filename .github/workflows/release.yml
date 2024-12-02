@@ -20,17 +20,20 @@ jobs:
     steps:
       - name: Download artifact
         uses: actions/download-artifact@v4
-
+        path: ./dist
       - name: Create Release
-        # id: create_release
+        id: create_release
         uses: actions/create-release@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          tag_name: ${{ github.event.workflow_run.head_branch }}
-          release_name: Release ${{ github.event.workflow_run.head_branch }}
+          tag_name: ${{ github.ref }}
+          release_name: Release ${{ github.ref }}
           draft: false
           prerelease: false
+
+      - name: Verify Download
+        run: ls -R ./dist
 
       - name: Upload Release Asset
         uses: actions/upload-release-asset@v1
