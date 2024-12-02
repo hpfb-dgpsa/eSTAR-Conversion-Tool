@@ -62,7 +62,7 @@ jobs:
           prerelease: false
 
       - name: Verify Download
-        run: ls -R ./dist
+        run: ls -R 
       - name: Verify release output 
         run: echo $steps.create_release.outputs.upload_url
 
