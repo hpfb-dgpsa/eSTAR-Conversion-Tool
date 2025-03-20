@@ -41,5 +41,4 @@ The tool supports the extraction of PDF, XML, and TXT files and will organize th
 2.	Error: "Invalid XML file. Extraction aborted."
     This indicates that the XML file you selected is not valid. Ensure that the file is well-formed and contains a valid <AttachmentManifest> section.
 
-## Contact:
-For any questions or issues, please contact the support team at support@bpo.hc-sc.gc.ca
+
